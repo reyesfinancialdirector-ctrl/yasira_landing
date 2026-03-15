@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta property="og:title" content="Concepción Velazquez ARR" />
+  <meta property="og:description" content="Su Agente de Bienes Raices en español, en el Triad NC" />
+  <meta property="og:image" content="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/69724151562a1a37d91d7919.png" /><!-- Imagen Concepción -->
+  <meta property="og:url" content="https://adrianareyesrealty.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concepción Velazquez Realtor</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/689645cf649372b058d13396.png" type="image/x-icon">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', 'Montserrat', Roboto, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* NAVBAR */
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        background: transparent;
+      }
+
+      nav img.logo {
+        width: 300px;
+        height: auto;
+        margin-bottom: -25px;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 40px;
+      }
+
+      nav ul li {
+        list-style: none;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        font-size: 24px;
+        color: #e74c3c;
+        font-weight: 600;
+      }
+
+      nav ul li a:hover {
+        color: #a52f22;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 32px;
+        color: #e74c3c;
+        cursor: pointer;
+      }
+
+      /* ----------------
+      SECCIÓN 1: HOME 
+      -------------------*/
+      #home {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 140px;
+        background-color: white;
+        background-image: url('https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/69371377169a42d684b66b77.png');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 43%;
+      }
+
+      .home-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+      }
+
+      /* Imagen agente */
+      .photo-container img {
+        width: 520px;
+        max-width: 100%;
+        opacity: 0;
+        transform: translateX(60px);
+        animation: fadeRight 1.4s ease forwards;
+        animation-delay: .2s;
+      }
+
+      .info-container {
+        max-width: 620px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 1.4s ease forwards;
+        animation-delay: .5s;
+      }
+
+      /* Título nombre */
+      .name-img {
+        width: 500px;
+        max-width: 100%;
+        margin-bottom: 25px;
+      }
+
+      .info-container p {
+        font-size: 22px;
+        line-height: 1.65;
+        color: #333;
+        font-weight: 600;
+      }
+      /* FIN SECCIÓN 1: HOME */
+
+      /* -------------------
+       SECCIÓN 2: CONÓCEME 
+       --------------------- */
+      .section-conoceme {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Video de fondo */
+      .section-conoceme .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      /* Filtro degradado de negro a transparente */
+      .section-conoceme .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%);
+        z-index: 1;
+      }
+
+      /* Contenido */
+      .conoceme-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        width: 100%;
+        max-width: 700px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Título */
+      .conoceme-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 25px;
+      }
+
+      /* Video agente */
+      .video-presentacion {
+        width: 60%;
+        max-width: 500px;
+        border-radius: 12px;
+        margin-bottom: 35px;
+      }
+
+      /* Iconos redes */
+      .social-icons {
+        display: flex;
+        gap: 28px;
+        margin-bottom: 20px;
+      }
+
+      .social-icons i {
+        font-size: 60px;
+        color: rgba(255, 0, 0, 0.85);
+        transition: 0.3s;
+      }
+
+      .social-icons i:hover {
+        transform: scale(1.15);
+      }
+
+      /* Texto final */
+      .frase-final {
+        bottom: 10px !important;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+        line-height: 1.6;
+      }
+
+      .fade-in,
+      .fade-in-delay1,
+      .fade-in-delay2,
+      .fade-in-delay3 {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      /* FIN SECCIÓN 2: CONÓCEME */
+
+      /* ---------------------------
+        SECCIÓN 3 - CONTÁCTAME
+      ---------------------------- */
+      .contact-section {
+        min-height: 100vh;
+        height: auto;
+        background: #0d0d0d;
+        color: #fff;
+        padding: 100px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 5%;
+      }
+
+      .contact-container {
+        width: 90%;
+        max-width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        padding-top: 120px !important;
+      }
+
+      .contact-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* FORMULARIO */
+      .contact-form {
+        width: 60%;
+        max-height: unset;
+      }
+
+      .contact-title {
+        font-size: 42px;
+        margin-bottom: 25px;
+        color: #fff;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+      }
+
+      .form-group label {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        padding: 12px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background: #1a1a1a;
+        color: #ffffff;
+        border: 1px solid #333;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .form-row .form-group {
+        width: 50%;
+      }
+
+      .btn-contact {
+        margin-top: 15px;
+        padding: 14px 20px;
+        background: #c62828;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-contact:hover {
+        background: #a51f1f;
+      }
+
+      /* INFORMACIÓN A LA DERECHA */
+      .contact-info {
+        width: 40%;
+        text-align: center;
+      }
+
+      .contact-name-img {
+        width: 85%;
+        max-width: 450px;
+        margin-bottom: 20px;
+      }
+
+      .contact-text {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+
+      /* ICONOS ROJOS */
+      .contact-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .icon-link {
+        font-size: 28px;
+        color: #c62828;
+        transition: 0.3s;
+        text-decoration: none;
+      }
+
+      .icon-link:hover {
+        transform: scale(1.18);
+        color: #ff4d4d;
+        transition: 0.3s ease;
+      }
+
+      .icon-link i {
+        text-decoration: none !important;
+      }
+
+      .fade-up,
+      .fade-right,
+      .fade-icon {
+        opacity: 1;
+      }
+      /* FIN SECCIÓN 3 - CONTÁCTAME */
+
+      .phone-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .phone-modal-content {
+        background: #fff;
+        color: #000;
+        padding: 30px 35px;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 420px;
+        width: 90%;
+      }
+
+      .phone-modal-content h3 {
+        margin-bottom: 10px;
+      }
+
+      .phone-modal-content strong {
+        display: block;
+        font-size: 22px;
+        margin: 15px 0;
+      }
+
+      .phone-modal-content button {
+        margin-top: 15px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        background: #c62828;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      /* ANIMACIONES */
+      @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fadeRight {
+        0% { opacity: 0; transform: translateX(-40px); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /*===================*/
+      /* RESPONSIVE DESIGN */
+      /*===================*/
+      @media (max-width: 1550px) {
+        #home {
+          padding: 0 80px;
+        }
+        .home-container {
+          gap: 70px;
+        }
+        .photo-container img {
+          width: 420px;
+          transform: none;
+        }
+        .info-container p {
+          font-size: 20px;
+          line-height: 1.45;
+        }
+        .conoceme-title {
+          font-size: 2.6rem;
+        }
+        .video-presentacion {
+          max-width: 350px;
+        }
+        .frase-final {
+          font-size: 1.6rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        #home {
+          padding: 0 40px;
+          background-size: 65%;
+        }
+        .home-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+        .photo-container img {
+          width: 380px;
+          transform: none;
+        }
+        .name-img {
+          margin: 20px auto;
+        }
+        .conoceme-content {
+          padding: 130px 20px 40px 20px;
+        }
+        .conoceme-title {
+          font-size: 2.2rem;
+        }
+        .frase-final {
+          font-size: 1.3rem;
+        }
+        .contact-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .contact-form,
+        .contact-info {
+          width: 100%;
+          text-align: center;
+        }
+        .contact-name-img {
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 15px 20px;
+        }
+        nav img.logo {
+          width: 150px;
+          margin-bottom: -10px;
+        }
+        nav ul {
+          display: none;
+          flex-direction: column;
+          background: white;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 80%;
+          padding: 20px 30px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          border-radius: 10px 0 0 10px;
+          gap: 20px;
+        }
+        nav ul.active {
+          display: flex;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        
+        #home {
+          padding: 0 20px;
+        }
+        .form-row {
+          flex-direction: column;
+        }
+        .form-row .form-group {
+          width: 100%;
+        }
+        .contact-section {
+          padding-top: 40px;
+          padding-bottom: 40px;
+          min-height: 100vh;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        .contact-wrapper {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .photo-container {
+          transform: translateY(60px) !important;
+        }
+        .photo-container img {
+          width: 230px !important;
+        }
+        .name-img { width: 280px; }
+        .info-container p {
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.1;
+        }
+        .social-icons {
+          gap: 18px;
+        }
+
+        .social-icons i {
+          font-size: 40px;
+        }
+      }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.adrianareyesrealty.com" target="_blank">
+      <img class="logo"
+            src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/69371955b480b320e496ace9.png"
+            alt="Logo Adriana Reyes Realty">
+    </a>
+    
+    <!-- Menú hamburguesa -->
+    <button class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#conoceme">Conóceme</a></li>
+        <li><a href="#contactame">Contáctame</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECCIÓN 1: HOME -->
+  <section id="home">
+      <div class="home-container">
+
+          <div class="photo-container">
+              <img src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/69724151562a1a37d91d7919.png"
+                    alt="Concepción Velazquez">
+          </div>
+
+          <div class="info-container">
+              <img class="name-img"
+                    src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/6972481901457647cd77c8db.png"
+                    alt="Concepción Velazquez">
+
+              <p>
+                  Soy Concepción Velazquez, Realtor® en Adriana Reyes Realty, y mi misión es ayudarte a alcanzar tus metas inmobiliarias —ya sea comprar, vender, alquilar o invertir— con el respaldo de un equipo sólido y una guía constante en cada paso del proceso.
+                  <br><br>
+                  Conocemos el mercado local, entendemos tus necesidades y trabajamos contigo para que cada decisión sea clara, segura y con propósito.
+              </p>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- SECCIÓN 2: "CONÓCEME" -->
+  <section id="conoceme" class="section-conoceme">
+
+    <!-- Video de fondo -->
+    <video class="bg-video" autoplay loop muted playsinline>
+      <source src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/698131bf18ecce38a534ac3b.mp4" type="video/mp4">
+    </video>
+
+    <!-- Filtro degradado -->
+    <div class="overlay"></div>
+
+    <div class="conoceme-content">
+
+      <h2 class="conoceme-title fade-in" data-anim>Conóceme</h2>
+
+      <!-- Video de agente -->
+      <video class="video-presentacion fade-in-delay1" data-anim controls preload="metadata">
+        <source src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/6981312718ecce7bb73497f0.mp4" type="video/mp4">
+      </video>
+
+      <!-- Iconos (llamada, correo, Facebook, Instagram, WhatsApp) -->
+      <div class="social-icons fade-in-delay2" data-anim>
+        <a href="tel:+13363025723"><i class="fas fa-phone"></i></a>
+        <a href="mailto:concepcion_velazquez@adrianareyesrealty.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/AdrianaReyesRealty" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/adrianareyesrealtor" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/13363025723" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <!-- Frase final -->
+      <div class="frase-final fade-in-delay3" data-anim>
+        En ARR no solo cerramos transacciones, <br> construimos relaciones duraderas.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: "CONTACTO" -->
+  <section id="contactame" class="contact-section">
+    <div class="contact-container">
+
+        <!-- LADO IZQUIERDO: FORMULARIO -->
+        <div class="contact-form fade-up" data-anim>
+          <h2 class="contact-title">Contáctame</h2>
+
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/JDxFEkAFnmTOalrzWmDl"
+            style="width:100%;height:100%;border:none;border-radius:3px"
+            id="inline-JDxFEkAFnmTOalrzWmDl" 
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Formulario Agentes - Concepción Velazquez"
+            data-height="515"
+            data-layout-iframe-id="inline-JDxFEkAFnmTOalrzWmDl"
+            data-form-id="JDxFEkAFnmTOalrzWmDl"
+            title="Formulario Agentes - Concepción Velazquez"
+                >
+          </iframe>
+
+        </div>
+
+        <!-- LADO DERECHO: INFO + ICONOS -->
+        <div class="contact-info">
+
+            <img 
+                src="https://storage.googleapis.com/msgsndr/48hz6AHqaU6NMstFnHTl/media/6972481901457647cd77c8db.png"
+                alt="Nombre Concepcion Velazquez"
+                class="contact-name-img fade-right" data-anim
+            >
+
+            <p class="contact-text">
+                Aquí estoy para responder cualquier pregunta <br> o inquietud que puedas tener. <br><br>
+                Contáctame a través del formulario en línea,<br> o por WhatsApp para obtener asistencia <br> inmediata!
+            </p>
+
+            <div class="contact-icons">
+                <a href="tel:+13363025723" class="icon-link fade-icon" data-anim style="animation-delay: .2s;" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:concepcion_velazquez@adrianareyesrealty.com" class="icon-link fade-icon" data-anim style="animation-delay: .35s;" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.facebook.com/AdrianaReyesRealty" class="icon-link fade-icon" data-anim style="animation-delay: .5s;" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/adrianareyesrealtor" class="icon-link fade-icon" data-anim style="animation-delay: .65s;" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/13363025723" class="icon-link fade-icon" data-anim style="animation-delay: .8s;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+  </section>
+
+  <!-- Modal Teléfono Desktop -->
+  <div id="phoneModal" class="phone-modal">
+    <div class="phone-modal-content">
+      <h3>Comunícate telefónicamente</h3>
+      <p>Para comunicarte por teléfono, marca:</p>
+      <strong>+1 (336) 302-5723</strong>
+      <button id="closePhoneModal">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Script del formulario -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+  <script>
+    // Navegación suave a enlaces internos - permite externos
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Menú hamburguesa
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Animaciones al hacer scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const elementos = document.querySelectorAll("[data-anim]");
+
+      const aparecer = (entry) => {
+        const el = entry.target;
+
+        if (el.classList.contains("fade-in")) {
+          el.style.animation = "fadeUp 1.4s ease forwards";
+        }
+        if (el.classList.contains("fade-in-delay1")) {
+          el.style.animation = "fadeUp 1.4s ease forwards .3s";
+        }
+        if (el.classList.contains("fade-in-delay2")) {
+          el.style.animation = "fadeUp 1.4s ease forwards .6s";
+        }
+        if (el.classList.contains("fade-in-delay3")) {
+          el.style.animation = "fadeUp 1.4s ease forwards .9s";
+        }
+        if (el.classList.contains("fade-up")) {
+            el.style.animation = "fadeUp 1.2s ease forwards";
+        }
+        if (el.classList.contains("fade-right")) {
+            el.style.animation = "fadeRight 1.2s ease forwards";
+        }
+        if (el.classList.contains("fade-icon")) {
+            const delay = el.style.animationDelay || "0s";
+            el.style.animation = `fadeIn 1s ease forwards ${delay}`;
+        }
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            aparecer(entry);
+            observer.unobserve(entry.target);
+            aplicarAnimacion(entry);
+
+            // la animación se repite al volver a la sección
+            setTimeout(() => {
+              entry.target.style.animation = "none";
+              entry.target.offsetHeight;
+              entry.target.style.opacity = 0;
+            }, 1500);
+          }
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      elementos.forEach(el => observer.observe(el));
+
+    });
+
+    const isMobile = () => {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    };
+
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', e => {
+        if (!isMobile()) {
+          e.preventDefault(); // bloquea tel: en escritorio
+          document.getElementById('phoneModal').style.display = 'flex';
+        }
+      });
+    });
+
+    document.getElementById('closePhoneModal').addEventListener('click', () => {
+      document.getElementById('phoneModal').style.display = 'none';
+    });
+
+  </script>
+
+</body>
+</html>
